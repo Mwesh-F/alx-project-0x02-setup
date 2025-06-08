@@ -22,16 +22,16 @@ const UsersPage = ({ users }: UsersPageProps) => {
   );
 };
 
+// This function fetches data at build time
 export const getStaticProps = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = await res.json();
+  const users = await res.json();
 
   return {
     props: {
-      users: data,
+      users,
     },
   };
 };
 
 export default UsersPage;
-
