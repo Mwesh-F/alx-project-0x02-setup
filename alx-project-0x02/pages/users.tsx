@@ -1,3 +1,4 @@
+import type { GetStaticProps } from "next";
 import Header from "@/components/layout/Header";
 import UserCard from "@/components/common/UserCard";
 import { type UserProps } from "@/interfaces";
@@ -22,8 +23,7 @@ const UsersPage = ({ users }: UsersPageProps) => {
   );
 };
 
-// This function fetches data at build time
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<UsersPageProps> = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const users = await res.json();
 
