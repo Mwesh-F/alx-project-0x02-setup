@@ -2,12 +2,11 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold">ALX Project</h1>
-      <nav className="space-x-4">
-        <Link href="/" className="hover:underline">Home</Link>
-        <Link href="/home" className="hover:underline">/home</Link>
-        <Link href="/about" className="hover:underline">/about</Link>
+    <header className="bg-gray-900 text-white p-4 shadow-md">
+      <nav className="flex space-x-6 justify-center">
+        <Link href="/home" className="hover:text-gray-300">Home</Link>
+        <Link href="/about" className="hover:text-gray-300">About</Link>
+        <Link href="/posts" className="hover:text-gray-300">Posts</Link>
       </nav>
     </header>
   );
